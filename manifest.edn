@@ -1,0 +1,31 @@
+;; moyoshi 催し — actor manifest (R3, ADR-2606272100).
+;; Convening actor: designs/hosts gatherings whose telos is VALIDATED social capital
+;; (survived, anti-sybil tie-formation), never turnout. Sealed EventDesigner-LLM behind
+;; an independent ConveningGovernor; human host in the actuation loop (ossekai + CACAO).
+;; R2 = live kizuna ingest + settlement decay-window job + commit-DAG persistence + on-kse
+;; mesh wrapper + autonomous heartbeat. R3 = kotoba live-engine bridge (src/moyoshi/methods/kotoba_bridge,
+;; host allowlist + exactly-once cursor + dry-run default + fail-open) wired into autorun
+;; --bridge + epoch-from-clock + settlement now-graph (ingest/observe-from-kizuna); fleet cell
+;; (src/moyoshi/cell.cljc → MoyoshiHeartbeatCell, node reuben, cron 39, healthz 13092).
+;; Live-engine push remains an explicit operator step (verified to fail-open).
+{:actor/id     "moyoshi"
+ :actor/glyph  "催"
+ :actor/tier   :tier-b
+ :actor/integrates ["asobi" "kizuna" "musubi" "ossekai"]
+ :actor/status :r3
+ :actor/adr    ["2606272100"]
+ :actor/telos  "raise social capital by designing/convening gatherings that form ties"
+ :actor/pairs  ["kizuna"   ; fragility signal in + baseline graph for settlement
+                "ossekai"  ; consent-bound actuator + wellbecoming-Δ source
+                "asobi"    ; openness/enclosure map (G3) + event node surface
+                "musubi"]  ; covenant ceremonies = ritual sub-category of moyoshi (R2)
+ :actor/mint   {:predicate "social/mint/convening/<epoch>"
+                :on        "validated + survived (≥S epochs) + anti-sybil ties"
+                :reuses    "moyai proof_of_contribution / ledger (no fork)"}
+ :actor/gates
+ [#:gate{:id "G1", :rule "PROPOSE-not-act — :event/proposed (:dry-run / :route :ossekai); no book/charge/invite/post; actuation = human host via ossekai + member CACAO (no-server-key)"}
+  #:gate{:id "G2", :rule "BONDS-not-turnout — objective reciprocal-tie + connectivity-repair + wellbecoming-Δ; NEVER attendance/reach/RSVP/virality/retention (§1.13 / §2(h)). No turnout field representable"}
+  #:gate{:id "G3", :rule "OPENING-not-enclosure — every gathering must increase participation-openness (asobi OPENING route); pay-to-enter/exclusionary/attention-locked convening refused"}
+  #:gate{:id "G4", :rule "MINT-on-validated-ties-only — mints only from ties that formed AND survived ≥S epochs AND passed anti-sybil membrane; headcount/RSVP mint nothing; coerced/faked ties burn asymmetrically"}
+  #:gate{:id "G5", :rule "CONSENT-bound, person-protective — no invite/profile/match without consent; person-level data purpose-limited; no per-person engagement score representable (audience = DIDs to open access to, not individuals to rank)"}
+  #:gate{:id "G6", :rule "no-server-key — reads kizuna/asobi public signals + proposes; holds no key"}]}

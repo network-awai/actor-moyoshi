@@ -1,0 +1,9 @@
+{:repository/version 1
+ :repository/path "orgs/etzhayyim/com-etzhayyim-moyoshi"
+ :layout {:source "src" :tests "test" :data "data" :contracts "contracts"
+          :schema "schema.edn" :external-wire "wire"}
+ :canonical {:metadata "manifest.edn" :dependencies "dependencies.edn"
+             :contracts "contracts/catalog.edn"}
+ :wire/formats #{}
+ :prohibited-runtimes #{:go :tinygo}
+ :prohibited-artifacts #{:launch-agent :plist :shell-deployer}}

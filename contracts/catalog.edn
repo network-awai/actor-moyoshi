@@ -1,0 +1,6 @@
+{:catalog/version 1
+ :catalog/canonical-format :edn
+ :actor :moyoshi
+ :contracts []
+ :wire []
+ :note "Moyoshi currently owns no external JSON/BPMN contract; manifest, schema, and data remain EDN."}

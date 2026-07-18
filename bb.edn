@@ -1,0 +1,13 @@
+{:paths ["src" "test"]
+ :deps {io.github.kotoba-lang/kotoba-datom
+        {:git/sha "65189be44e3753f7a997faadab160ba60720737c"}}
+ :tasks
+ {test {:doc "Run the standalone Moyoshi CLJC suite"
+        :requires ([clojure.test]
+                   [moyoshi.tests.test-moyoshi]
+                   [moyoshi.tests.test-r2]
+                   [moyoshi.tests.test-r3])
+        :task (clojure.test/run-tests
+               'moyoshi.tests.test-moyoshi
+               'moyoshi.tests.test-r2
+               'moyoshi.tests.test-r3)}}}

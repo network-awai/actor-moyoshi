@@ -1,0 +1,7 @@
+{:dependencies/version 1
+ :runtime #{:clojure :cljc :babashka :kotoba}
+ :repositories [{:repo "kotoba-lang/kotoba-datom"
+                 :sha "65189be44e3753f7a997faadab160ba60720737c"
+                 :purpose :content-addressed-datom-log}]
+ :deprecated #{:go :tinygo :launch-agent :plist-deploy}
+ :go/artifacts []}
