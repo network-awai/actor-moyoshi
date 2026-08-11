@@ -1,5 +1,10 @@
 # moyoshi 催し — convening actor that mints *validated* social capital
 
+Canonical repository: `network-awai/actor-moyoshi`. This governed, resident
+convening actor belongs to the AWAI human-network plane. It proposes gatherings
+and records consent-bound social-capital evidence; Tamaki separately owns
+artificial-organism evolution.
+
 **DID**: `did:web:moyoshi.etzhayyim.com`
 **Namespace**: `com.etzhayyim.moyoshi.*`
 **ADR**: ADR-2606272100

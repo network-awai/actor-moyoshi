@@ -1,0 +1,5 @@
+{:repo/id "network-awai/actor-moyoshi"
+ :repo/aliases ["etzhayyim/com-etzhayyim-moyoshi"]
+ :repo/role :governed-executable-actor
+ :repo/execution :resident
+ :repo/boundary "Consent-bound convening and social-capital evidence only; Tamaki owns artificial-organism evolution."}
