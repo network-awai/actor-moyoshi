@@ -9,7 +9,7 @@
   (epoch supplied), no-server-key. The pure core (`beat`) runs over supplied inputs; the
   clj `-main` wires the committed kizuna log + the epoch + the settlement now-graph
   (`observe`), and the kotoba live-engine bridge is the further G7 leg. Portable .cljc (bb)."
-  (:require [moyoshi.methods.moyoshi :as m]
+  (:require [kotoba.lang.text] [moyoshi.methods.moyoshi :as m]
             [moyoshi.methods.ingest  :as ingest]
             [moyoshi.methods.settle  :as settle]
             [moyoshi.methods.kotoba  :as kot]
@@ -71,7 +71,7 @@
      (`ingest/observe-from-kizuna`), persists, optionally pushes to the LIVE engine (--bridge,
      fail-open), verifies the chain."
      [& argv]
-     (let [pos     (vec (remove #(clojure.string/starts-with? (str %) "--") argv))
+     (let [pos     (vec (remove #(kotoba.lang.text/starts-with? (str %) "--") argv))
            argset  (set argv)
            bridge? (contains? argset "--bridge")
            base    (or (first pos) ".")
