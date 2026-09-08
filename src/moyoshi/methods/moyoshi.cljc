@@ -32,7 +32,7 @@
       audience is a set of DIDs to OPEN access to, never individuals to RANK. A
       per-person engagement/rank field is UNREPRESENTABLE (refused).
    G6 no-server-key — moyoshi READS kizuna/asobi public signals + PROPOSES; holds no key."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [clojure.edn :as edn]
             #?(:clj [clojure.java.io :as io])))
 

@@ -4,7 +4,7 @@
   (observe-from-kizuna) wired through the autorun heartbeat. The live push itself is
   operator-gated (MOYOSHI_KOTOBA_LIVE); these verify the deterministic, no-I/O surface."
   (:require [clojure.test :refer [deftest is testing]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             #?(:clj [clojure.java.io :as io])
             [moyoshi.methods.moyoshi :as m]
             [moyoshi.methods.ingest  :as ingest]
