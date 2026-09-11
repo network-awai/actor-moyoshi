@@ -85,6 +85,6 @@ The canonical actor-owned decision is in
 
 ## Standalone verification
 
-Run `bb test`. EDN is canonical for metadata, data, and contracts. No external
+Run `kbb -M:test`. EDN is canonical for metadata, data, and contracts. No external
 wire representation is currently actor-owned. Go, TinyGo, macOS LaunchAgent,
 plist, and shell deployment artifacts are deprecated.
