@@ -6,7 +6,7 @@
 ;; mesh wrapper + autonomous heartbeat. R3 = kotoba live-engine bridge (src/moyoshi/methods/kotoba_bridge,
 ;; host allowlist + exactly-once cursor + dry-run default + fail-open) wired into autorun
 ;; --bridge + epoch-from-clock + settlement now-graph (ingest/observe-from-kizuna); fleet cell
-;; (src/moyoshi/cell.cljc → MoyoshiHeartbeatCell, node reuben, cron 39, healthz 13092).
+;; (src/moyoshi/cell.cljk → MoyoshiHeartbeatCell, node reuben, cron 39, healthz 13092).
 ;; Live-engine push remains an explicit operator step (verified to fail-open).
 {:actor/id     "moyoshi"
  :actor/glyph  "催"

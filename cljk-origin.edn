@@ -1,0 +1,18 @@
+{:format :kotoba.cljk-origin/v1
+ :renamed-on "2026-09-11"
+ :decision "adr-2609111500-cljk-rename-all-clojure-source (com-junkawasaki/root 90-docs/adr; owner instruction 2026-09-11)"
+ :rule "value = the extension the file had before the rename. A path ending in .clj.cljk or .cljs.cljk kept it in the name because both platform files existed (or the plain target was taken)."
+ :origins
+ {"src/moyoshi/autorun.cljk" ".cljc"
+  "src/moyoshi/cell.cljk" ".cljc"
+  "src/moyoshi/cells/social_post/state_machine.cljk" ".cljc"
+  "src/moyoshi/methods/ingest.cljk" ".cljc"
+  "src/moyoshi/methods/kotoba.cljk" ".cljc"
+  "src/moyoshi/methods/kotoba_bridge.cljk" ".cljc"
+  "src/moyoshi/methods/mesh.cljk" ".clj"
+  "src/moyoshi/methods/moyoshi.cljk" ".cljc"
+  "src/moyoshi/methods/settle.cljk" ".cljc"
+  "src/moyoshi/methods/social.cljk" ".cljc"
+  "test/moyoshi/tests/test_moyoshi.cljk" ".cljc"
+  "test/moyoshi/tests/test_r2.cljk" ".cljc"
+  "test/moyoshi/tests/test_r3.cljk" ".cljc"}}
