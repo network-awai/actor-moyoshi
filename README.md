@@ -56,7 +56,7 @@ attendance.**
 → `record` a pending gathering (settle-at = epoch + S) → `settle` any gathering whose
 window has elapsed (`src/moyoshi/methods/settle`, survived + new + anti-sybil ties → mint signal) →
 `persist` (content-addressed kotoba commit-DAG, `src/moyoshi/methods/kotoba`, idempotent-by-content,
-verify-chain tamper-evident). The on-kse face is `src/moyoshi/methods/mesh.clj`.
+verify-chain tamper-evident). The on-kse face is `src/moyoshi/methods/mesh.cljk`.
 
 ## Constitutional gates (enforced in code + tests at R1)
 
