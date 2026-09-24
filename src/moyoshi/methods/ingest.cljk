@@ -6,7 +6,7 @@
   no-server-key (reads a committed edn / Datom, never a live key). Pure transform +
   a clj-only loader. Portable .cljc (bb)."
   (:require [kotoba.lang.edn :as edn]
-            #?(:clj [clojure.java.io :as io])))
+            #?(:clj [kotoba.io :as io])))
 
 (defn kizuna->fragility
   "Lift kizuna's readout {:isolated [...] :leverage-actor id :assessment {id {:reciprocity ..}}}
