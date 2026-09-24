@@ -5,7 +5,7 @@
   (`kaname.methods.join`: run a mirror = G7, join a committed output = the actor's job).
   no-server-key (reads a committed edn / Datom, never a live key). Pure transform +
   a clj-only loader. Portable .cljc (bb)."
-  (:require [clojure.edn :as edn]
+  (:require [kotoba.lang.edn :as edn]
             #?(:clj [clojure.java.io :as io])))
 
 (defn kizuna->fragility

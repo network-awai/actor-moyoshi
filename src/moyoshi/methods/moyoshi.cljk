@@ -33,7 +33,7 @@
       per-person engagement/rank field is UNREPRESENTABLE (refused).
    G6 no-server-key — moyoshi READS kizuna/asobi public signals + PROPOSES; holds no key."
   (:require [kotoba.lang.text :as str]
-            [clojure.edn :as edn]
+            [kotoba.lang.edn :as edn]
             #?(:clj [clojure.java.io :as io])))
 
 ;; ── ledger constants (mirror kotoba/docs/SOCIAL-CAPITAL-LEDGER.md; params live in the
