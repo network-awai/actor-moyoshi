@@ -10,7 +10,7 @@
   (:require [kotoba.lang.text :as str]
             [moyoshi.methods.settle :as settle]
             [kotoba.datom :as kd]
-            #?(:clj [clojure.java.io :as io])))
+            #?(:clj [kotoba.io :as io])))
 
 (def default-log "data/persisted/moyoshi.convening.kotoba.edn")
 

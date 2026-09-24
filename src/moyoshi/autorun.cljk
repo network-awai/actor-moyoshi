@@ -14,7 +14,7 @@
             [moyoshi.methods.settle  :as settle]
             [moyoshi.methods.kotoba  :as kot]
             #?(:clj [moyoshi.methods.kotoba-bridge :as bridge])
-            #?(:clj [clojure.java.io :as io])
+            #?(:clj [kotoba.io :as io])
             #?(:clj [kotoba.datom :as kd])))
 
 (defn beat

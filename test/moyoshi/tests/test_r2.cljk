@@ -2,7 +2,7 @@
   "moyoshi 催し — R2 tests (ADR-2606272100): live kizuna ingest + settlement decay-window
   job + commit-DAG persistence. Verifies the three R2 legs' invariants on the synthetic
   committed-kizuna seed."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             #?(:clj [clojure.java.io :as io])
             [moyoshi.methods.moyoshi :as m]
             [moyoshi.methods.ingest  :as ingest]

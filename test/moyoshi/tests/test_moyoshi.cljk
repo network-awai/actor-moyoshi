@@ -2,7 +2,7 @@
   "moyoshi 催し — convening + validated-social-capital tests (ADR-2606272100). Verifies
   the loop's mathematical invariants (design → govern → settle/mint) AND its
   constitutional gates (G1..G6) on the synthetic society seed."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             #?(:clj [clojure.java.io :as io])
             [moyoshi.methods.moyoshi :as m]))
 
