@@ -34,7 +34,7 @@
    G6 no-server-key — moyoshi READS kizuna/asobi public signals + PROPOSES; holds no key."
   (:require [kotoba.lang.text :as str]
             [kotoba.lang.edn :as edn]
-            #?(:clj [clojure.java.io :as io])))
+            #?(:clj [kotoba.io :as io])))
 
 ;; ── ledger constants (mirror kotoba/docs/SOCIAL-CAPITAL-LEDGER.md; params live in the
 ;;    Council-attested social/capital/params/active blob — defaults here are transparent
@@ -207,7 +207,7 @@
 #?(:clj
    (defn -main [& args]
      (let [path (or (first args)
-                    (-> *file* io/file .getParentFile .getParentFile .getParentFile .getParentFile
+                    (-> *file* io/file io/parent-file io/parent-file io/parent-file io/parent-file
                         (io/file "data" "seed-society.kotoba.edn") str))
            {:keys [fragility settlement]} (load-seed path)
            b (beat fragility)

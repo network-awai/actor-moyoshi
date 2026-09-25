@@ -3,7 +3,7 @@
   job + commit-DAG persistence. Verifies the three R2 legs' invariants on the synthetic
   committed-kizuna seed."
   (:require [kotoba.test :refer [deftest is testing]]
-            #?(:clj [clojure.java.io :as io])
+            #?(:clj [kotoba.io :as io])
             [moyoshi.methods.moyoshi :as m]
             [moyoshi.methods.ingest  :as ingest]
             [moyoshi.methods.settle  :as settle]
@@ -11,7 +11,7 @@
             [moyoshi.autorun         :as auto]))
 
 #?(:clj (def actor-dir (-> (io/resource "moyoshi/tests/test_r2.cljc") io/file
-                           .getParentFile .getParentFile .getParentFile .getParentFile)))
+                           io/parent-file io/parent-file io/parent-file io/parent-file)))
 #?(:clj (def kseed (io/file actor-dir "data" "seed-kizuna.kotoba.edn")))
 #?(:clj (def kout  (ingest/load-kizuna kseed)))
 

@@ -17,13 +17,13 @@
             [moyoshi.methods.ingest :as ingest]
             [moyoshi.methods.kotoba :as kot]
             [kotoba.datom :as kd]
-            #?(:clj [clojure.java.io :as io])))
+            #?(:clj [kotoba.io :as io])))
 
 #?(:clj
    (defn- actor-dir
      "Standalone repository root, resolved from this namespace's classpath location."
      []
-     (-> (io/resource "moyoshi/cell.cljc") io/file .getParentFile .getParentFile .getParentFile)))
+     (-> (io/resource "moyoshi/cell.cljc") io/file io/parent-file io/parent-file io/parent-file)))
 
 #?(:clj
    (defn fire

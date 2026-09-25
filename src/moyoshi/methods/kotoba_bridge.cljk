@@ -19,7 +19,7 @@
       attached ONLY when :operator-did is given (a PUBLIC identifier, never a secret) — no-server-key;
     - DRY-RUN by default (returns exact request bodies, no I/O); live = MOYOSHI_KOTOBA_LIVE=1 or :live true.
   HTTP is an injectable fn (*http-post* / :http-post), defaulting to babashka.http-client. Deterministic."
-  (:require [kotoba.lang.text :as str]
+  (:require [kotoba.bytes :as kbytes] [kotoba.lang.text :as str]
             [kotoba.datom :as kd]))
 
 (def allowed-kotoba-hosts
@@ -123,7 +123,7 @@
      "CIDv1 + dag-cbor(0x71) + sha2-256 over the raw graph-NAME bytes, multibase base32lower
      ('b' prefix). Mirrors kotoba-core cid.rs (a fresh CID transacts as genesis)."
      ^String [^String name]
-     (let [digest (.digest (java.security.MessageDigest/getInstance "SHA-256") (.getBytes name "UTF-8"))
+     (let [digest (.digest (java.security.MessageDigest/getInstance "SHA-256") (kbytes/utf8-bytes name))
            raw (byte-array (concat [0x01 0x71 0x12 0x20] (seq digest)))]
        (str "b" (b32-lower raw)))))
 
@@ -178,8 +178,8 @@
                       (and operator-did (not (str/blank? operator-did)))
                       (assoc "Authorization"
                              (str "Bearer "
-                                  (let [b64 (fn [s] (.encodeToString (.withoutPadding (java.util.Base64/getUrlEncoder))
-                                                                     (.getBytes ^String s "UTF-8")))]
+                                  (let [b64 (fn [s] (kbytes/base64url-encode
+                                                                     (kbytes/utf8-bytes ^String s) {:pad? false}))]
                                     (str (b64 (kd/canonical-json {"alg" "none"})) "."
                                          (b64 (kd/canonical-json {"sub" operator-did})) ".unsigned-loopback"))))
                       trust (assoc internal-trust-header trust))]
